@@ -1,0 +1,22 @@
+{
+  "name": "now-you-can-use",
+  "version": "1.0.0",
+  "description": "A feed of newly supported browser features supported in the latest versions of Chrome, Edge, Firefox, and Safari.",
+  "license": "MIT",
+  "author": "Hawkbar",
+  "type": "module",
+  "main": "index.js",
+  "scripts": {
+    "build:data": "node scripts/generate-data.mjs",
+    "build:site": "node scripts/generate-site.mjs",
+    "build": "npm run build:data && npm run build:site",
+    "start": "npm run build && serve dist",
+    "validate": "node scripts/validate-output.mjs",
+    "test": "npm run build && npm run validate"
+  },
+  "devDependencies": {
+    "@mdn/browser-compat-data": "^7.3.14",
+    "gh-pages": "^6.3.0",
+    "serve": "^14.2.6"
+  }
+}

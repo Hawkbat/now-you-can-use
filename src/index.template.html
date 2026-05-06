@@ -1,0 +1,88 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta http-equiv="Cache-Control" content="no-cache, no-store, must-revalidate" />
+    <meta http-equiv="Pragma" content="no-cache" />
+    <meta http-equiv="Expires" content="0" />
+    <title>Now You Can Use</title>
+    <meta
+      name="description"
+      content="A feed of web platform features that reached support in Chrome, Firefox, Edge, and Safari."
+    />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@400;500;700&family=IBM+Plex+Mono:wght@400;500&display=swap"
+      rel="stylesheet"
+    />
+    <link rel="stylesheet" href="__STYLES_URL__" />
+    <script>
+      window.__NYCU_ASSETS__ = {
+        featuresUrl: "__FEATURES_URL__",
+        metadataUrl: "__METADATA_URL__",
+      };
+    </script>
+  </head>
+  <body>
+    <div class="bg-orb orb-a"></div>
+    <div class="bg-orb orb-b"></div>
+
+    <main class="page">
+      <header class="hero">
+        <p class="eyebrow">Interoperability feed</p>
+        <h1>Now You Can Use</h1>
+        <p class="lede">
+          Newly interoperable browser features, ordered by the date they became supported in all baseline evergreen browsers.
+        </p>
+      </header>
+
+      <section class="controls" aria-label="Filtering controls">
+        <label for="search-input">Search</label>
+        <input id="search-input" type="search" placeholder="Find a feature, API, or category" />
+
+        <label for="category-select">Category</label>
+        <select id="category-select" class="filter-select">
+          <option value="all" selected>All categories</option>
+        </select>
+
+        <label for="milestone-select">Milestone</label>
+        <select id="milestone-select" class="filter-select">
+          <option value="all" selected>All platforms baseline</option>
+          <option value="desktop">Desktop baseline</option>
+          <option value="mobile">Mobile baseline</option>
+        </select>
+      </section>
+
+      <section aria-live="polite" aria-busy="false">
+        <ul id="feed-list" class="feed-list"></ul>
+        <button id="load-more" class="load-more" type="button">Load 50 more</button>
+      </section>
+
+      <footer class="site-footnote" aria-label="Data metadata">
+        <p>
+          Compatibility data generated
+          <time id="generated-at" datetime="__GENERATED_AT__">__GENERATED_AT__</time>.
+        </p>
+      </footer>
+    </main>
+
+    <template id="item-template">
+      <li class="feature-card">
+        <div class="feature-top">
+          <p class="feature-date"></p>
+          <p class="feature-category"></p>
+        </div>
+        <h2 class="feature-title"></h2>
+        <p class="feature-path"></p>
+        <p class="feature-count"></p>
+        <div class="browser-grid"></div>
+        <ul class="feature-subpaths"></ul>
+        <p class="feature-links"></p>
+      </li>
+    </template>
+
+    <script type="module" src="__APP_URL__"></script>
+  </body>
+</html>
