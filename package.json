@@ -15,7 +15,7 @@
     "test": "npm run build && npm run validate"
   },
   "devDependencies": {
-    "@mdn/browser-compat-data": "^7.3.14",
+    "@mdn/browser-compat-data": "^8.0.4",
     "gh-pages": "^6.3.0",
     "serve": "^14.2.6"
   }

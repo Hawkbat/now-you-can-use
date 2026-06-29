@@ -7,6 +7,9 @@ on:
   schedule:
     - cron: "25 6 * * *"
 
+env:
+  FORCE_JAVASCRIPT_ACTIONS_TO_NODE24: true
+
 permissions:
   contents: read
   pages: write
@@ -32,6 +35,9 @@ jobs:
 
       - name: Install dependencies
         run: npm ci
+
+      - name: Update compatibility feed data
+        run: npm i @mdn/browser-compat-data@latest
 
       - name: Generate compatibility feed data
         run: npm run build:data
